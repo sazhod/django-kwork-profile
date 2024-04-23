@@ -33,7 +33,6 @@ class CustomUserManager(BaseUserManager):
         """
         Установка флагов для superuser.
         """
-        extra_fields.setdefault('role', settings.SUPERUSER)
 
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
@@ -45,17 +44,3 @@ class CustomUserManager(BaseUserManager):
             raise ValueError("Superuser должен иметь is_superuser=True.")
         return self._create_user(email, password, **extra_fields)
 
-
-class TeacherManager(CustomUserManager):
-    def get_queryset(self):
-        return super().get_queryset().filter(role=settings.TEACHER)
-
-
-class StudentManager(CustomUserManager):
-    def get_queryset(self):
-        return super().get_queryset().filter(role=settings.STUDENT)
-
-
-class UndefinedUserManager(CustomUserManager):
-    def get_queryset(self):
-        return super().get_queryset().filter(role=settings.UNDEFINED)

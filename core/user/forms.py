@@ -7,11 +7,16 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ("email",)
+        fields = ('email', 'first_name', 'last_name', 'patronymic')
 
 
 class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ("email",)
+        fields = ('email', 'first_name', 'last_name', 'patronymic')
+
+
+class CustomUserLoginForm(forms.Form):
+    email = forms.EmailField(label='Почта')
+    password = forms.PasswordInput()
