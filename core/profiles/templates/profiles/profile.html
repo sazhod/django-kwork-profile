@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Выход</button>
+</form>
 </body>
 </html>
