@@ -133,11 +133,19 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 # Custom User model
 
 AUTH_USER_MODEL = "user.CustomUser"
+
+
+# Redirect to home URL after login
+
+LOGIN_REDIRECT_URL = '/'
+
