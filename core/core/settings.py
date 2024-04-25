@@ -147,5 +147,10 @@ AUTH_USER_MODEL = "user.CustomUser"
 
 # Redirect to home URL after login
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'profiles'
+
+
+# Redirect to home URL after logout
+
+LOGOUT_REDIRECT_URL = 'login'
 
